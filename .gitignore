@@ -1,0 +1,18 @@
+# Visual Studio temporary files
+.vs/
+Debug/
+Release/
+x64/
+
+# User-specific files
+*.user
+*.log
+
+# Build files
+*.obj
+*.ipch
+*.pdb
+*.db
+
+# Visual Studio upgrade logs
+UpgradeLog.htm
