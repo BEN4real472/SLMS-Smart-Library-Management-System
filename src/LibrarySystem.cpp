@@ -1,4 +1,4 @@
-#include "../include/LibrarySystem.h"
+#include "LibrarySystem.h"
 #include <iostream>
 
 using namespace std;
@@ -16,9 +16,4 @@ void LibrarySystem::startSystem()
 void LibrarySystem::shutdownSystem()
 {
     cout << "Shutting down Library System..." << endl;
-}
-
-void LibrarySystem::displaySystemStatus()
-{
-    cout << "System is running normally." << endl;
 }

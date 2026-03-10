@@ -1,4 +1,4 @@
-#include "../include/Book.h"
+#include "Book.h"
 #include <iostream>
 
 using namespace std;
@@ -9,7 +9,6 @@ Book::Book(string id, string t, string a)
     title = t;
     author = a;
     status = "Available";
-    dueDate = "N/A";
 }
 
 string Book::getStatus()

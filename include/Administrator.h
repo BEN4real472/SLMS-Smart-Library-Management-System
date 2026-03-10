@@ -6,23 +6,17 @@
 
 using namespace std;
 
-class Administrator : public User {
-
-private:
-    int userId;
-
+class Administrator : public User
+{
 public:
-
     Administrator(string id, string n, string e, string p);
 
-    void addMember(string memberId);
-    void removeMember(string memberId);
-    void addLibrarian(string librarianId);
-    void removeLibrarian(string librarianId);
-    void setBorrowLimit(int limit);
-    void setLatePenalty(double penalty);
-    void adminDisplayDashboard();
+    void addUser(string userId);
+    void removeUser(string userId);
+    void updateUser(string userId);
+    void generateSystemReport();
 
+    void adminDisplayDashboard();
 };
 
 #endif

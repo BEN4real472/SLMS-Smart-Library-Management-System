@@ -1,22 +1,21 @@
 #ifndef LIBRARYRULES_H
 #define LIBRARYRULES_H
 
-class LibraryRules {
+#include <string>
+#include <iostream>
 
+using namespace std;
+
+class LibraryRules
+{
 private:
-    int borrowLimit;
-    double latePenaltyPerDay;
+    int reservationExpiryDays;
 
 public:
-
     LibraryRules();
 
-    void setBorrowLimit(int limit);
-    void setLatePenalty(double penalty);
-
-    int getBorrowLimit();
-    double getLatePenaltyPerDay();
-
+    int getReservationExpiry();
+    void displayRules();
 };
 
 #endif

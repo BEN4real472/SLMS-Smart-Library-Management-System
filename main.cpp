@@ -1,12 +1,12 @@
-#include "include/User.h"
-#include "include/Member.h"
-#include "include/Librarian.h"
-#include "include/Administrator.h"
-#include "include/Book.h"
-#include "include/LibraryRules.h"
-#include "include/LibrarySystem.h"
-
 #include <iostream>
+
+#include "User.h"
+#include "Member.h"
+#include "Librarian.h"
+#include "Administrator.h"
+#include "Book.h"
+#include "LibraryRules.h"
+#include "LibrarySystem.h"
 
 using namespace std;
 
@@ -29,7 +29,6 @@ int main()
     Administrator admin("A001", "Charlie", "charlie@email.com", "root123");
     admin.adminDisplayDashboard();
 
-    system.displaySystemStatus();
     system.shutdownSystem();
 
     return 0;

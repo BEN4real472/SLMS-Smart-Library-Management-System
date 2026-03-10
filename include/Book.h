@@ -5,24 +5,23 @@
 
 using namespace std;
 
-class Book {
-
+class Book
+{
 private:
     string bookId;
     string title;
     string author;
-    string status;   // e.g., Available / Borrowed / Reserved
-    string dueDate;  // keep as string for simplicity (e.g., "2026-03-10")
+    string status;
+    string dueDate;
 
 public:
-    Book(string id, string t, string a, string s = "Available", string d = "");
+    Book(string id, string t, string a);
 
     string getStatus();
     void setStatus(string newStatus);
 
-    void setDueDate(string date);
+    void setDueDate(string newDueDate);
     string getDueDate();
-
 };
 
 #endif

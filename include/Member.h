@@ -2,20 +2,18 @@
 #define MEMBER_H
 
 #include "User.h"
-#include <list>
+#include <string>
+
 using namespace std;
 
-class Member : public User {
-private:
-    list<string> borrowedBooks;
-    int maxLimit;
-
+class Member : public User
+{
 public:
     Member(string id, string n, string e, string p);
 
-    bool borrowBook(string bookId);
-    bool returnBook(string bookId);
-    bool reserveBook(string bookId);
+    void searchBook(string title);
+    void borrowBook(string bookId);
+    void returnBook(string bookId);
     void memberDisplayDashboard();
 };
 
