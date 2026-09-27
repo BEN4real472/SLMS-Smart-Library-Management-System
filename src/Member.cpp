@@ -1,29 +1,56 @@
-#include "../include/Member.h"
+#include "Member.h"
 #include <iostream>
 
-using namespace std;
-
-Member::Member(string id, string n, string e, string p)
-    : User(id, n, e, p)
+Member::Member(std::string userID, std::string name,
+    std::string email, std::string password)
+    : User(userID, name, email, password),
+    borrowedBooks(0)
 {
 }
 
-void Member::searchBook(string title)
+void Member::displayDashboard() const
 {
-    cout << "Searching for book: " << title << endl;
+    std::cout << "\n===== MEMBER DASHBOARD =====\n";
+    std::cout << "Member ID: " << userID << '\n';
+    std::cout << "Name: " << name << '\n';
+    std::cout << "Books currently borrowed: "
+        << borrowedBooks << "/" << borrowingLimit << '\n';
 }
 
-void Member::borrowBook(string bookId)
+void Member::borrowBook()
 {
-    cout << "Borrowing book with ID: " << bookId << endl;
+    if (borrowedBooks < borrowingLimit)
+    {
+        borrowedBooks++;
+        std::cout << "Book borrowed successfully.\n";
+    }
+    else
+    {
+        std::cout << "Borrowing limit reached. "
+            << "A member can borrow a maximum of "
+            << borrowingLimit << " books.\n";
+    }
 }
 
-void Member::returnBook(string bookId)
+void Member::returnBook()
 {
-    cout << "Returning book with ID: " << bookId << endl;
+    if (borrowedBooks > 0)
+    {
+        borrowedBooks--;
+        std::cout << "Book returned successfully.\n";
+    }
+    else
+    {
+        std::cout << "There are no borrowed books to return.\n";
+    }
 }
 
-void Member::memberDisplayDashboard()
+int Member::getBorrowedBooks() const
 {
-    cout << "Displaying member dashboard..." << endl;
+    return borrowedBooks;
+}
+
+int Member::getBorrowingLimit() const
+{
+    return borrowingLimit;
 }

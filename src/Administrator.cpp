@@ -1,34 +1,33 @@
-#include "../include/Administrator.h"
+#include "Administrator.h"
 #include <iostream>
 
-using namespace std;
-
-Administrator::Administrator(string id, string n, string e, string p)
-    : User(id, n, e, p)
+Administrator::Administrator(std::string userID, std::string name,
+    std::string email, std::string password)
+    : User(userID, name, email, password)
 {
 }
 
-void Administrator::addUser(string userId)
+void Administrator::displayDashboard() const
 {
-    cout << "Adding user with ID: " << userId << endl;
+    std::cout << "\n===== ADMINISTRATOR DASHBOARD =====\n";
+    std::cout << "Administrator ID: " << userID << '\n';
+    std::cout << "Name: " << name << '\n';
+    std::cout << "1. Manage Members\n";
+    std::cout << "2. Manage Librarians\n";
+    std::cout << "3. Manage System Rules\n";
 }
 
-void Administrator::removeUser(string userId)
+void Administrator::manageMembers() const
 {
-    cout << "Removing user with ID: " << userId << endl;
+    std::cout << "Administrator selected: Manage Members.\n";
 }
 
-void Administrator::updateUser(string userId)
+void Administrator::manageLibrarians() const
 {
-    cout << "Updating user with ID: " << userId << endl;
+    std::cout << "Administrator selected: Manage Librarians.\n";
 }
 
-void Administrator::generateSystemReport()
+void Administrator::manageSystemRules() const
 {
-    cout << "Generating system report..." << endl;
-}
-
-void Administrator::adminDisplayDashboard()
-{
-    cout << "Displaying administrator dashboard..." << endl;
+    std::cout << "Administrator selected: Manage System Rules.\n";
 }

@@ -1,21 +1,22 @@
-#ifndef LIBRARYRULES_H
-#define LIBRARYRULES_H
-
-#include <string>
-#include <iostream>
-
-using namespace std;
+#pragma once
 
 class LibraryRules
 {
 private:
+    int maximumBorrowLimit;
     int reservationExpiryDays;
+    double latePenaltyPerDay;
 
 public:
     LibraryRules();
 
-    int getReservationExpiry();
-    void displayRules();
-};
+    int getMaximumBorrowLimit() const;
+    int getReservationExpiryDays() const;
+    double getLatePenaltyPerDay() const;
 
-#endif
+    void setMaximumBorrowLimit(int limit);
+    void setReservationExpiryDays(int days);
+    void setLatePenaltyPerDay(double penalty);
+
+    void displayRules() const;
+};

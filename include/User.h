@@ -1,22 +1,29 @@
-#ifndef USER_H
-#define USER_H
+#pragma once
 
 #include <string>
-using namespace std;
 
-class User {
+class User
+{
 protected:
-    string userId;
-    string name;
-    string email;
-    string password;
+    std::string userID;
+    std::string name;
+    std::string email;
+    std::string password;
 
 public:
-    User(string id, string n, string e, string p);
+    User(std::string userID, std::string name,
+        std::string email, std::string password);
 
-    bool login();
-    void logout();
-    void displayDashboard();
+    virtual ~User() = default;
+
+    std::string getUserID() const;
+    std::string getName() const;
+    std::string getEmail() const;
+
+    bool login(const std::string& enteredEmail,
+        const std::string& enteredPassword) const;
+
+    void logout() const;
+
+    virtual void displayDashboard() const;
 };
-
-#endif

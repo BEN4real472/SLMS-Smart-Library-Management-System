@@ -1,27 +1,30 @@
-#ifndef BOOK_H
-#define BOOK_H
+#pragma once
 
 #include <string>
-
-using namespace std;
 
 class Book
 {
 private:
-    string bookId;
-    string title;
-    string author;
-    string status;
-    string dueDate;
+    std::string bookID;
+    std::string title;
+    std::string author;
+    std::string status;
+    std::string dueDate;
 
 public:
-    Book(string id, string t, string a);
+    Book(std::string bookID,
+        std::string title,
+        std::string author);
 
-    string getStatus();
-    void setStatus(string newStatus);
+    std::string getBookID() const;
+    std::string getTitle() const;
+    std::string getAuthor() const;
+    std::string getStatus() const;
+    std::string getDueDate() const;
 
-    void setDueDate(string newDueDate);
-    string getDueDate();
+    void displayBookDetails() const;
+
+    void borrowBook(const std::string& dueDate);
+    void returnBook();
+    void reserveBook();
 };
-
-#endif

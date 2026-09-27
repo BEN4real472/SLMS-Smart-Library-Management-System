@@ -1,20 +1,22 @@
-#ifndef MEMBER_H
-#define MEMBER_H
+#pragma once
 
 #include "User.h"
-#include <string>
-
-using namespace std;
 
 class Member : public User
 {
+private:
+    int borrowedBooks;
+    const int borrowingLimit = 5;
+
 public:
-    Member(string id, string n, string e, string p);
+    Member(std::string userID, std::string name,
+        std::string email, std::string password);
 
-    void searchBook(string title);
-    void borrowBook(string bookId);
-    void returnBook(string bookId);
-    void memberDisplayDashboard();
+    void displayDashboard() const override;
+
+    void borrowBook();
+    void returnBook();
+
+    int getBorrowedBooks() const;
+    int getBorrowingLimit() const;
 };
-
-#endif

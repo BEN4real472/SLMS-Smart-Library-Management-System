@@ -1,26 +1,16 @@
-#ifndef LIBRARIAN_H
-#define LIBRARIAN_H
+#pragma once
 
 #include "User.h"
-#include <string>
 
-using namespace std;
-
-class Librarian : public User {
-
-private:
-    int userId;
-
+class Librarian : public User
+{
 public:
+    Librarian(std::string userID, std::string name,
+        std::string email, std::string password);
 
-    Librarian(string id, string n, string e, string p);
+    void displayDashboard() const override;
 
-    void addBook(string bookId);
-    void updateBook(string bookId);
-    void removeBook(string bookId);
-    void generateReport();
-    void librarianDisplayDashboard();
-
+    void addBook() const;
+    void updateBook() const;
+    void removeBook() const;
 };
-
-#endif

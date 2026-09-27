@@ -1,22 +1,16 @@
-#ifndef ADMINISTRATOR_H
-#define ADMINISTRATOR_H
+#pragma once
 
 #include "User.h"
-#include <string>
-
-using namespace std;
 
 class Administrator : public User
 {
 public:
-    Administrator(string id, string n, string e, string p);
+    Administrator(std::string userID, std::string name,
+        std::string email, std::string password);
 
-    void addUser(string userId);
-    void removeUser(string userId);
-    void updateUser(string userId);
-    void generateSystemReport();
+    void displayDashboard() const override;
 
-    void adminDisplayDashboard();
+    void manageMembers() const;
+    void manageLibrarians() const;
+    void manageSystemRules() const;
 };
-
-#endif

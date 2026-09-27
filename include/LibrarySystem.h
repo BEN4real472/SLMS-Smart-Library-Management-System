@@ -1,17 +1,17 @@
-#ifndef LIBRARYSYSTEM_H
-#define LIBRARYSYSTEM_H
-
-#include <iostream>
-
-using namespace std;
+#pragma once
 
 class LibrarySystem
 {
+private:
+    bool running;
+
 public:
     LibrarySystem();
 
     void startSystem();
     void shutdownSystem();
-};
 
-#endif
+    bool isRunning() const;
+
+    void displaySystemInformation() const;
+};
